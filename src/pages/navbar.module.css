@@ -1,0 +1,24 @@
+.imge {
+    width: 60px;
+    height: 60px;
+    mix-blend-mode: darken;
+}
+
+.navbar {
+    background-color: rgb(240, 255, 241);
+    display: flex;
+    justify-content: space-around;
+    font-size: 25px;
+    font-weight: bold;
+    color: green;
+    align-items: center;
+
+}
+
+@media screen and (max-width: 800px) {
+    .navbar {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        text-align: center;
+    }
+}
