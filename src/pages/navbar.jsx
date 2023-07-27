@@ -53,7 +53,7 @@ export default function Navbar() {
  async function showAddress() {
     let obj={address:msg}
     console.log(obj)
-    const url = `http://127.0.0.1:5002/chatbot`;
+    const url = `${process.env.REACT_APP_BASEURL}/chatbot`;
     const options = {
       method: 'POST',
       headers: {
