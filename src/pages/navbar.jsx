@@ -22,7 +22,6 @@ export default function Navbar() {
   const [token, setToken] = useState('');
 
   useEffect(() => {
-    // Check if there's a token in sessionStorage
     const storedToken = JSON.parse(sessionStorage.getItem('token'));
     if (storedToken) {
       setName(JSON.parse(sessionStorage.getItem('name')));
@@ -30,20 +29,13 @@ export default function Navbar() {
       setToken(storedToken);
     }
   }, []);
-
-  // Function to handle logout
   const handleLogout = () => {
-    // Clear sessionStorage
     sessionStorage.clear();
-    // Reset the state values
     setName('');
     setId('');
     setToken('');
-    // Navigate to the home page after logout
     navigate("/");
   };
-
-  // Use the useNavigate hook to get the navigate function
   const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
@@ -123,14 +115,14 @@ export default function Navbar() {
             />
           </DrawerBody>
           <Box
-            height="55%" // Set the fixed height of the container
-            overflowY="scroll" // Enable vertical scrolling for overflowed content
-            border="1px solid #ccc" // Optional: Add a border for better visualization
+            height="55%" 
+            overflowY="scroll" 
+            border="1px solid #ccc" 
           >
             <Flex direction="column" p="4">
-              {/* You can also use VStack instead of Flex */}
+            
               <Box className={styles.box1} >
-              Your Address : {msg}{/* Replace this with the actual content of your messages */}
+              Your Address : {msg}
               </Box>
               <Box className={styles.box2} marginTop={"10px"}>
                {list}
